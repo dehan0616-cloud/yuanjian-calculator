@@ -29,17 +29,17 @@ with st.sidebar:
     # 戶別選擇 (已移除「連動代收款」文字)
     unit_type = st.selectbox("🏠 選擇戶別", ["A1", "A2", "A3", "A5", "B1", "B2", "B3"])
     
-    total_price = st.number_input("房屋總價 (萬元)", min_value=100, value=1524, step=1)
+    total_price = st.number_input("房屋總價 (萬元)", min_value=100, value=1500, step=1)
     
     deposit = 10 
-    st.write(f"💰 訂金：固定 **{deposit} 萬**")
-    signing = st.number_input("✍️ 簽約金 (萬元)", min_value=0, value=40, step=1)
+    st.write(f"💰 訂金：**{deposit} 萬**")
+    signing = st.number_input("✍️ 簽約金 (萬元)", min_value=0, value=100, step=1)
     
     st.divider()
     
     st.header("🏦 房貸設定")
     loan_years = st.number_input("貸款年限 (年)", min_value=10, max_value=40, value=30)
-    interest_rate = st.number_input("房貸利率 (%)", min_value=1.0, max_value=6.0, value=2.18, step=0.01)
+    interest_rate = st.number_input("房貸利率 (%)", min_value=1.0, max_value=6.0, value=2.60, step=0.01)
 
 # --- 3. 代收款判斷邏輯 ---
 escrow_map = {"A1": 25, "A2": 25, "B1": 25, "B2": 25, "A3": 23, "A5": 23, "B3": 27}
